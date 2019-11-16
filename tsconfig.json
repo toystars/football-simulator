@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "lib": ["esnext"],
+        "types": [
+            "node",
+            "jest"
+        ],
+        "declaration": true,
+        "outDir": "dist",
+        "rootDir": "src",
+        "strict": true,
+    },
+    "exclude": [
+        "dist",
+        "node_modules",
+        "src/**/*.spec.ts"
+    ],
+    "include": [
+        "src"
+    ]
+}
