@@ -1,2 +1,20 @@
 node_modules
-/dist
+node_modules_
+.npmrc
+aot
+build
+dist
+tmp
+.idea
+npm-debug.log
+*.ngfactory.ts
+*.ngstyle.ts
+*.shim.ts
+*.ngsummary.json
+.DS_Store
+
+# Jest output
+coverage
+
+# Editor
+.vscode
