@@ -6,7 +6,7 @@ import { TeamIntent } from '../enums';
 export interface ITeam {
     id: string;
     name: string;
-    rating: number;
+    rating?: number;
     players: IMatchDayPlayer[];
-    intent: TeamIntent;
+    intent?: TeamIntent;
 }

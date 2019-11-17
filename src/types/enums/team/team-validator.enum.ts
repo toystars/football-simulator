@@ -4,5 +4,5 @@ export enum TeamValidator {
     MinNumberOfPlayers = 7,
     MaxNumberOfPlayers = 11,
     MinNumberOfSubs = 5,
-    MaxNumberOdSubs = 7
+    MaxNumberOfSubs = 7
 }
