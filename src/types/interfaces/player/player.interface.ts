@@ -71,4 +71,5 @@ export interface IMatchDayPlayer extends IBasePlayer {
     action: PlayerAction;
     currentPOS: IPosition;
     stats: IPlayerStats;
+    playingPositionRating: number;
 }
