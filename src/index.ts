@@ -1,1 +1,4 @@
-export const Greeter = (name: string): string => `Hello ${name}`;
+/** Package exports */
+
+// enum exports
+export * from './types/enums';

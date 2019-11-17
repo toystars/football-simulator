@@ -14,6 +14,10 @@
         "outDir": "dist",
         "rootDir": "src",
         "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "preserveConstEnums": true,
+        "experimentalDecorators": true
     },
     "exclude": [
         "dist",
