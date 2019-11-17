@@ -1,4 +1,5 @@
 import { IPitch, PitchDimensionsLength, PitchDimensionsWidth, PitchTurfType } from '../../types';
+import { hasProperty } from '../utils';
 
 /**
  * Validates a pitch object
@@ -6,7 +7,7 @@ import { IPitch, PitchDimensionsLength, PitchDimensionsWidth, PitchTurfType } fr
  * @param {IPitch} pitch - The pitch to validate.
  */
 export function validatePitch(pitch: IPitch): boolean {
-    if (!pitch.hasOwnProperty('length') || !pitch.hasOwnProperty('width')) {
+    if (!hasProperty(pitch, 'length') || !hasProperty(pitch, 'width')) {
         throw new TypeError('Invalid Pitch - Pitch length and width must be provided!');
     } else if (pitch.length < PitchDimensionsLength.Min || pitch.length > PitchDimensionsLength.Max) {
         throw new RangeError(`Invalid Pitch - Pitch length must be between ${PitchDimensionsLength.Min} and ${PitchDimensionsLength.Max}`);
