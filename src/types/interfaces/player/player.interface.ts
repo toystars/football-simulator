@@ -43,6 +43,7 @@ interface IPlayerStats {
     cards: ICardsStat;
     passes: IStatData;
     tackles: ITackleStat;
+    offsides: number;
     rating: number;
 }
 

@@ -6,6 +6,8 @@ export interface ITechnicalAttributes {
      *
      * How accurately a player can deliver a corner kick to his intended target area.
      *
+     * Passing and Technique also affect how accurately a corner kick finds its intended target.
+     *
      */
     corners: number;
 
@@ -14,13 +16,15 @@ export interface ITechnicalAttributes {
      *
      * How accurately a player can cross the ball from wide into the opposition penalty area to his intended target.
      *
+     * Passing and Technique also affect how accurately a crossing finds its intended target.
+     *
      */
     crossing: number;
 
     /**
      * dribbling
      *
-     * How well a player can control the ball while running with it.
+     * How well a player can control the ball while running with it. Technique has slight influence over dribbling.
      *
      */
     dribbling: number;
@@ -88,7 +92,7 @@ export interface ITechnicalAttributes {
     /**
      * passing
      *
-     * How accurately a player can pass the ball to his intended target.
+     * How accurately a player can pass the ball to his intended target. Influenced by Technique.
      *
      */
     passing: number;
@@ -406,6 +410,8 @@ export interface IGoalKeepingAttributes {
      * oneOnOne
      *
      * How well a goalkeeper can deal with one-on-one situations against opposition attackers.
+     *
+     * Composure and Concentration also affect how well a goal keeper handles one-on-one situations.
      *
      */
     oneOnOne: number;
