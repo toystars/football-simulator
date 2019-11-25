@@ -1,6 +1,7 @@
 /** Defines the Player interface */
 
-import { PlayerPosition, PlayerIntent, PlayerPreferedFoot, PlayerAction } from '../../enums';
+import { PlayerIntent, PlayerPreferedFoot, PlayerAction } from '../../enums';
+import { PlayerPosition } from './player-position.interface';
 import { IPosition } from '../position.interface';
 import {
     ITechnicalAttributes,
@@ -48,14 +49,12 @@ interface IPlayerStats {
 }
 
 export interface IBasePlayer {
-    id: string;
+    id: string | number;
     firstName: string;
     lastName: string;
     nickName?: string;
-    initials: string;
+    initials?: string;
     positions: PlayerPosition[];
-    playingPosition: PlayerPosition;
-    rating: number;
     attributes: IOutfieldPlayerAttributes | IGoalKeeperAttributes;
     metaAttributes: IMetaAttributes;
     condition: number;
@@ -66,11 +65,12 @@ export interface IBasePlayer {
 }
 
 export interface IMatchDayPlayer extends IBasePlayer {
+    playingPosition: PlayerPosition;
     offside: boolean;
     hasBall: boolean;
     intent: PlayerIntent;
     action: PlayerAction;
     currentPOS: IPosition;
     stats: IPlayerStats;
-    playingPositionRating: number;
+    rating: number;
 }

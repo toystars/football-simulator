@@ -1,3 +1,4 @@
+export * from './base';
 export * from './player';
 export * from './pitch.interface';
 export * from './ball.interface';

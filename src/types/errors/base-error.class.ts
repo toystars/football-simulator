@@ -21,3 +21,15 @@ export class TeamValidationError extends Error {
         this.name = 'TeamValidationError';
     }
 }
+
+/**
+ * Represents a player validation error.
+ * @constructor
+ * @param {string} message - Error message.
+ */
+export class PlayerValidationError extends Error {
+    constructor(message: string) {
+        super(`Invalid Player - ${message}`);
+        this.name = 'PlayerValidationError';
+    }
+}
