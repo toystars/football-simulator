@@ -77,7 +77,7 @@ export function validatePlayer(player: IMatchDayPlayer): boolean {
  * @function
  * @param {PlayerPosition} positions - Player positions to validate
  */
-function validatePlayerPositions(positions: PlayerPosition[] = []): boolean {
+export function validatePlayerPositions(positions: PlayerPosition[] = []): boolean {
     positions.forEach((position: PlayerPosition) => {
         if (!isValidPosition(position)) {
             return false;

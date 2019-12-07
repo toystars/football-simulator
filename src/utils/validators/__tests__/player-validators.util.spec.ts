@@ -1,5 +1,5 @@
 import { cloneDeep } from 'lodash';
-import { validatePlayer } from '../player-validators.util';
+import { validatePlayer, validatePlayerPositions } from '../player-validators.util';
 import { IMatchDayPlayer, PlayerValidationError } from '../../../types';
 
 const testPlayer: IMatchDayPlayer = {
@@ -74,7 +74,7 @@ const testPlayer: IMatchDayPlayer = {
     currentPOS: { x: 0, y: 0 }
 };
 
-describe('Player Validator', () => {
+describe('Player Validator - General', () => {
     it('should throw PlayerValidationError on invalid player', () => {
         expect(() => validatePlayer(null as any)).toThrow(PlayerValidationError);
     });
@@ -103,5 +103,15 @@ describe('Player Validator', () => {
 
     it('should return true for valid player', () => {
         expect(validatePlayer(testPlayer)).toBeTruthy();
+    });
+});
+
+describe('Player Validator - Position', () => {
+    it('should return false for empty player positions', () => {
+        expect(() => validatePlayerPositions([{ position: 'AM' }, { position: 'CM' }])).toBeTruthy();
+    });
+
+    it('should return true for valid player positions', () => {
+        expect(() => validatePlayerPositions([])).toBeTruthy();
     });
 });
