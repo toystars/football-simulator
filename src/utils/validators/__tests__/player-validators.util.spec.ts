@@ -101,6 +101,36 @@ describe('Player Validator - General', () => {
         expect(() => validatePlayer(playerClone)).toThrow(PlayerValidationError);
     });
 
+    it('should throw PlayerValidationError for injured player', () => {
+        const playerClone = cloneDeep(testPlayer);
+        playerClone.injured = true;
+        expect(() => validatePlayer(playerClone)).toThrow(PlayerValidationError);
+    });
+
+    it('should throw PlayerValidationError for empty player positions', () => {
+        const playerClone = cloneDeep(testPlayer);
+        playerClone.positions = [];
+        expect(() => validatePlayer(playerClone)).toThrow(PlayerValidationError);
+    });
+
+    it('should throw PlayerValidationError for player with no playing position', () => {
+        const playerClone = cloneDeep(testPlayer);
+        playerClone.playingPosition = null as any;
+        expect(() => validatePlayer(playerClone)).toThrow(PlayerValidationError);
+    });
+
+    it('should throw PlayerValidationError for player with no invalid conditions', () => {
+        const playerClone = cloneDeep(testPlayer);
+        playerClone.condition = 900;
+        expect(() => validatePlayer(playerClone)).toThrow(PlayerValidationError);
+    });
+
+    it('should throw PlayerValidationError for player with invalid preferred foot', () => {
+        const playerClone = cloneDeep(testPlayer);
+        playerClone.preferredFoot = 'NON LEFT' as any;
+        expect(() => validatePlayer(playerClone)).toThrow(PlayerValidationError);
+    });
+
     it('should return true for valid player', () => {
         expect(validatePlayer(testPlayer)).toBeTruthy();
     });
