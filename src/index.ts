@@ -1,4 +1,4 @@
 /** Package exports */
 
-// enum exports
-export * from './types/enums';
+export * from './types';
+export * from './utils';
