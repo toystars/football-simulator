@@ -1,7 +1,9 @@
 /** Defines the Player interface */
 
-import { PlayerIntent, PlayerPreferedFoot, PlayerAction } from '../../enums';
+import { PlayerAction } from '../../enums';
 import { PlayerPosition } from './player-position.interface';
+import { PreferredFoot } from './player-preferred-foot.interface';
+import { PlayerIntent } from './player-intent.interface';
 import { IPosition } from '../position.interface';
 import {
     ITechnicalAttributes,
@@ -11,34 +13,29 @@ import {
     IMetaAttributes
 } from './player-attributes.interface';
 
-interface IGoalKeeperAttributes {
+export interface IPlayerAttributes {
     goalKeeping: IGoalKeepingAttributes;
-    mental: IMentalAttributes;
-    physical: IPhysicalAttributes;
-}
-
-interface IOutfieldPlayerAttributes {
     technical: ITechnicalAttributes;
     mental: IMentalAttributes;
     physical: IPhysicalAttributes;
 }
 
-interface IStatData {
+export interface IStatData {
     total: number;
     on: number;
     off: number;
 }
 
-interface ITackleStat extends IStatData {
+export interface ITackleStat extends IStatData {
     fouls: number;
 }
 
-interface ICardsStat {
+export interface ICardsStat {
     yellow: number;
     red: number;
 }
 
-interface IPlayerStats {
+export interface IPlayerStats {
     goals: number;
     shots: IStatData;
     cards: ICardsStat;
@@ -55,22 +52,23 @@ export interface IBasePlayer {
     nickName?: string;
     initials?: string;
     positions: PlayerPosition[];
-    attributes: IOutfieldPlayerAttributes | IGoalKeeperAttributes;
-    metaAttributes: IMetaAttributes;
+    attributes: IPlayerAttributes;
+    metaAttributes?: IMetaAttributes;
     condition: number;
     injured: boolean;
     form: number;
-    preferedFoot: PlayerPreferedFoot;
-    weakFootStrength: number;
+    preferredFoot: PreferredFoot;
+    weakFootStrength?: number;
+    goalKeeperRating?: number;
 }
 
 export interface IMatchDayPlayer extends IBasePlayer {
+    currentPOS: IPosition;
     playingPosition: PlayerPosition;
     offside: boolean;
     hasBall: boolean;
     intent: PlayerIntent;
-    action: PlayerAction;
-    currentPOS: IPosition;
-    stats: IPlayerStats;
-    rating: number;
+    action?: PlayerAction;
+    stats?: IPlayerStats;
+    rating?: number;
 }

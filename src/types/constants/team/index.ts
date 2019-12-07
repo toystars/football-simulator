@@ -1,1 +1,1 @@
-export * from './team-validation.const';
+export * from './team-validation.constant';

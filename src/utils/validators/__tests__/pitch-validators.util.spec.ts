@@ -4,21 +4,21 @@ import { IPitch, PitchDimensionsLength, PitchDimensionsWidth, PitchTurfType, Pit
 const draftPitch: IPitch = { length: 0, width: 0 };
 
 describe('Pitch Validator', () => {
-    it('should throw TypeError on empty pitch', () => {
+    it('should throw PitchValidationError on empty pitch', () => {
         expect(() => validatePitch({} as any)).toThrow(PitchValidationError);
     });
 
-    it('should throw RangeError on invalid pitch length', () => {
+    it('should throw PitchValidationError on invalid pitch length', () => {
         const testPitch: IPitch = { ...draftPitch };
         expect(() => validatePitch(testPitch)).toThrow(PitchValidationError);
     });
 
-    it('should throw RangeError on invalid pitch width', () => {
+    it('should throw PitchValidationError on invalid pitch width', () => {
         const testPitch: IPitch = { ...draftPitch, length: PitchDimensionsLength.Min };
         expect(() => validatePitch(testPitch)).toThrow(PitchValidationError);
     });
 
-    it('should throw TypeError on pitch with invalid turf type', () => {
+    it('should throw PitchValidationError on pitch with invalid turf type', () => {
         const testPitch: any = {
             length: PitchDimensionsLength.Min,
             width: PitchDimensionsWidth.Min,
