@@ -63,11 +63,11 @@ export interface IBasePlayer {
 }
 
 export interface IMatchDayPlayer extends IBasePlayer {
-    currentPOS: IPosition;
     playingPosition: PlayerPosition;
-    offside: boolean;
-    hasBall: boolean;
-    intent: PlayerIntent;
+    currentPOS?: IPosition;
+    offside?: boolean;
+    hasBall?: boolean;
+    intent?: PlayerIntent;
     action?: PlayerAction;
     stats?: IPlayerStats;
     rating?: number;
