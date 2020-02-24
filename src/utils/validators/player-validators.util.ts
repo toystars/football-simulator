@@ -92,15 +92,10 @@ export function validatePlayerPositions(positions: PlayerPosition[] = []): boole
  * @param {PlayerPosition} player - Player to validate.
  */
 function validatePlayerAttributes(player: IMatchDayPlayer): boolean {
-
-    // validate player attributes field
-    const playerAttributes = player.attributes;
-    if (!playerAttributes) return false;
-
     // check player playing position
     if (player.playingPosition.position === 'GK') {
         // validate Goalkeeping attributes
-        const goalKeeping = playerAttributes.goalKeeping;
+        const goalKeeping = player.attributes?.goalKeeping;
         if (!goalKeeping) return false;
 
         for (let x = 0; x < PLAYER_GOLAKEEPING_ATTRIBUTES_FIELDS.length; x++) {
@@ -112,7 +107,7 @@ function validatePlayerAttributes(player: IMatchDayPlayer): boolean {
         }
     } else {
         // validate Technical attributes
-        const technical = playerAttributes.technical;
+        const technical = player.attributes?.technical;
         if (!technical) return false;
 
         for (let x = 0; x < PLAYER_TECHNICAL_ATTRIBUTES_FIELDS.length; x++) {
@@ -125,7 +120,7 @@ function validatePlayerAttributes(player: IMatchDayPlayer): boolean {
     }
 
     // validate mental attributes
-    const mental = playerAttributes.mental;
+    const mental = player.attributes?.mental;
     if (!mental) return false;
 
     for (let x = 0; x < PLAYER_MENTAL_ATTRIBUTES_FIELDS.length; x++) {
@@ -137,7 +132,7 @@ function validatePlayerAttributes(player: IMatchDayPlayer): boolean {
     }
 
     // validate physical attributes
-    const physical = playerAttributes.physical;
+    const physical = player.attributes?.physical;
     if (!physical) return false;
 
     for (let x = 0; x < PLAYER_PHYSICAL_ATTRIBUTES_FIELDS.length; x++) {

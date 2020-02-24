@@ -2,6 +2,7 @@
 
 import { IMatchDayPlayer } from '../../types';
 
+/** @internal */
 export class CPlayer {
     // matchday player data
     data: IMatchDayPlayer;
