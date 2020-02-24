@@ -3,13 +3,12 @@
 import { IMatchDayPlayer } from '../../types';
 
 export class CPlayer {
+    // matchday player data
+    data: IMatchDayPlayer;
 
     constructor(playerData: IMatchDayPlayer) {
         this.data = playerData;
     }
-
-    // matchday player data
-    data: IMatchDayPlayer;
 
     // main method that decides player's next action
     takeAction() {
