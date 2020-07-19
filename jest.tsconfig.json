@@ -1,0 +1,13 @@
+{
+    "extends": "./tsconfig.json",
+    "lib": [
+        "dom",
+        "es2017",
+        "node"
+    ],
+    "compilerOptions": {
+        "jsx": "react",
+        "module": "commonjs",
+        "target": "ES2019"
+    }
+}

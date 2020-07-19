@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
+        "target": "es5",
+        "module": "commonjs",
         "moduleResolution": "node",
         "esModuleInterop": true,
         "resolveJsonModule": true,
@@ -17,7 +17,14 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "preserveConstEnums": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "removeComments": true,
+        "allowUnusedLabels": false,
+        "pretty": true,
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "stripInternal": true
     },
     "exclude": [
         "dist",

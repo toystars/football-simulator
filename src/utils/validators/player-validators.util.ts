@@ -95,7 +95,7 @@ function validatePlayerAttributes(player: IMatchDayPlayer): boolean {
     // check player playing position
     if (player.playingPosition.position === 'GK') {
         // validate Goalkeeping attributes
-        const goalKeeping = get(player, 'attributes.goalKeeping');
+        const goalKeeping = player.attributes?.goalKeeping;
         if (!goalKeeping) return false;
 
         for (let x = 0; x < PLAYER_GOLAKEEPING_ATTRIBUTES_FIELDS.length; x++) {
@@ -107,7 +107,7 @@ function validatePlayerAttributes(player: IMatchDayPlayer): boolean {
         }
     } else {
         // validate Technical attributes
-        const technical = get(player, 'attributes.technical');
+        const technical = player.attributes?.technical;
         if (!technical) return false;
 
         for (let x = 0; x < PLAYER_TECHNICAL_ATTRIBUTES_FIELDS.length; x++) {
@@ -120,7 +120,7 @@ function validatePlayerAttributes(player: IMatchDayPlayer): boolean {
     }
 
     // validate mental attributes
-    const mental = get(player, 'attributes.mental');
+    const mental = player.attributes?.mental;
     if (!mental) return false;
 
     for (let x = 0; x < PLAYER_MENTAL_ATTRIBUTES_FIELDS.length; x++) {
@@ -132,7 +132,7 @@ function validatePlayerAttributes(player: IMatchDayPlayer): boolean {
     }
 
     // validate physical attributes
-    const physical = get(player, 'attributes.physical');
+    const physical = player.attributes?.physical;
     if (!physical) return false;
 
     for (let x = 0; x < PLAYER_PHYSICAL_ATTRIBUTES_FIELDS.length; x++) {
